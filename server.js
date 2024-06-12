@@ -10,10 +10,12 @@ require("dotenv").config({ multiline: true });
 const app = express();
 const port = process.env.PORT || 3535;
 const textController = require("./controller/text.controller");
+const healthController = require("./controller/health.controller");
 
 app.use(express.json());
 
 app.use("/api", textController);
+app.use("/health", healthController);
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
