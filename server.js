@@ -16,6 +16,7 @@ app.use(express.json());
 
 app.use("/api", textController);
 app.use("/health", healthController);
+app.get("/", (req, res) => res.send("BE App for WebQuill.Gemini"));
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
